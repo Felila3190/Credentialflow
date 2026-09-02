@@ -1,0 +1,55 @@
+{
+“name”: “CredentialFlow Dashboard”,
+“worker_dashboard”: {
+“title”: “My Credentials”,
+“summary”: {
+“verified”: 0,
+“verification_pending”: 0,
+“renewal_due”: 0,
+“overdue”: 0,
+“extension_requests”: 0
+},
+“credential_card”: {
+“credential_name”: “”,
+“status”: “”,
+“status_indicator”: “”,
+“expiry_date”: “”,
+“expected_document_date”: “”,
+“available_actions”: [
+“view credential”,
+“upload updated document”,
+“provide overdue explanation”,
+“request extension”
+]
+},
+“visual_statuses”: {
+“verified”: “🟢 Verified”,
+“uploaded”: “🔵 Uploaded - Verification Pending”,
+“renewal_due”: “🟡 Renewal Due”,
+“overdue”: “🔴 Overdue - Action Required”,
+“extension_requested”: “🟣 Extension Requested”,
+“extension_approved”: “🟢 Extension Approved”,
+“extension_declined”: “🔴 Extension Declined”,
+“not_yet_available”: “⚪ Not Yet Available”
+}
+},
+“management_dashboard”: {
+“title”: “Credential Management”,
+“sections”: [
+“Workers requiring attention”,
+“Documents awaiting verification”,
+“Upcoming renewals”,
+“Overdue credentials”,
+“Extension requests”,
+“Recently verified credentials”
+],
+“management_actions”: [
+“review credential”,
+“view worker explanation”,
+“view expected document date”,
+“approve extension”,
+“decline extension”,
+“view compliance status”
+]
+}
+}
