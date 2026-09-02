@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CredentialFlow</title>
+<title>CredentialFlow | Workforce Credential Management</title>
 
 <style>
 * {
@@ -12,174 +12,224 @@
 
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f4f6f8;
-  color: #1f2937;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  background: #f5f7fb;
+  color: #172033;
+  line-height: 1.5;
 }
 
 header {
-  background: #111827;
+  background: #172033;
   color: white;
-  padding: 25px 20px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 30px;
-}
-
-header p {
-  margin: 6px 0 0;
-  opacity: .85;
-}
-
-.container {
-  max-width: 1050px;
-  margin: auto;
-  padding: 25px 20px;
-}
-
-.hero {
-  background: white;
-  padding: 28px;
-  border-radius: 16px;
-  margin-bottom: 22px;
-  box-shadow: 0 3px 12px rgba(0,0,0,.06);
-}
-
-.hero h2 {
-  margin-top: 0;
-  font-size: 27px;
-}
-
-.hero p {
-  line-height: 1.6;
-}
-
-.highlight {
-  font-weight: bold;
-  font-size: 18px;
-}
-
-.stats {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(160px,1fr));
-  gap: 14px;
-  margin-bottom: 22px;
-}
-
-.stat {
-  background: white;
   padding: 20px;
-  border-radius: 14px;
-  text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,.05);
 }
 
-.stat strong {
-  display: block;
-  font-size: 30px;
-  margin-bottom: 5px;
-}
-
-.section {
-  background: white;
-  padding: 25px;
-  border-radius: 16px;
-  margin-bottom: 22px;
-  box-shadow: 0 3px 12px rgba(0,0,0,.06);
-}
-
-.section h2 {
-  margin-top: 0;
-}
-
-.credential {
+.header-inner {
+  max-width: 1100px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 15px;
-  padding: 17px 0;
-  border-bottom: 1px solid #e5e7eb;
 }
 
-.credential:last-child {
-  border-bottom: none;
+.logo {
+  font-size: 24px;
+  font-weight: 800;
 }
 
-.credential h3 {
-  margin: 0 0 6px;
+.logo span {
+  color: #67d5c5;
 }
 
-.credential small {
-  color: #6b7280;
+.badge {
+  background: rgba(255,255,255,0.12);
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 25px 18px 60px;
+}
+
+.hero {
+  background: white;
+  border-radius: 20px;
+  padding: 35px 25px;
+  margin-bottom: 22px;
+  box-shadow: 0 8px 25px rgba(20,30,50,0.06);
+}
+
+.hero h1 {
+  font-size: clamp(30px, 7vw, 52px);
+  line-height: 1.05;
+  margin: 0 0 15px;
+}
+
+.hero h1 span {
+  color: #168b7c;
+}
+
+.hero p {
+  max-width: 720px;
+  color: #596579;
+  font-size: 17px;
+}
+
+.target {
+  margin-top: 20px;
+  padding: 15px;
+  border-left: 4px solid #168b7c;
+  background: #eefaf8;
+  border-radius: 8px;
+}
+
+.target strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.section-title {
+  margin: 32px 0 14px;
+}
+
+.section-title h2 {
+  margin: 0;
+  font-size: 25px;
+}
+
+.section-title p {
+  margin: 5px 0 0;
+  color: #687386;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.stat {
+  background: white;
+  padding: 18px;
+  border-radius: 15px;
+  box-shadow: 0 5px 18px rgba(20,30,50,0.05);
+}
+
+.stat-number {
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.stat-label {
+  color: #687386;
+  font-size: 13px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 18px;
+  box-shadow: 0 5px 18px rgba(20,30,50,0.05);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 17px;
 }
 
 .status {
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: bold;
-  white-space: nowrap;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
 }
 
 .verified {
-  background: #dcfce7;
-  color: #166534;
+  background: #e6f7ef;
+  color: #137a4d;
 }
 
 .pending {
-  background: #dbeafe;
-  color: #1e40af;
+  background: #e9f2ff;
+  color: #2865a6;
 }
 
 .due {
-  background: #fef3c7;
-  color: #92400e;
+  background: #fff4d6;
+  color: #8a6410;
 }
 
 .overdue {
-  background: #fee2e2;
-  color: #991b1b;
-}
-
-.neutral {
-  background: #f3f4f6;
-  color: #374151;
+  background: #ffe8e8;
+  color: #a52a2a;
 }
 
 .extension {
-  background: #ede9fe;
-  color: #5b21b6;
+  background: #f1e8ff;
+  color: #7041a8;
+}
+
+.unavailable {
+  background: #edf0f3;
+  color: #667085;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 18px;
 }
 
 button {
-  border: none;
-  background: #111827;
-  color: white;
-  padding: 12px 18px;
-  border-radius: 9px;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 15px;
+  font-weight: 700;
   cursor: pointer;
-  font-weight: bold;
-  margin: 5px 5px 5px 0;
+  background: #168b7c;
+  color: white;
+}
+
+button.secondary {
+  background: #e9eef4;
+  color: #263449;
+}
+
+button.danger {
+  background: #b73535;
 }
 
 button:hover {
-  opacity: .85;
-}
-
-.secondary {
-  background: #e5e7eb;
-  color: #111827;
+  opacity: 0.9;
 }
 
 .panel {
   display: none;
-  background: #f9fafb;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
-  padding: 22px;
-  margin-top: 18px;
+  background: #f8fafc;
+  border: 1px solid #dce3eb;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 15px;
 }
 
 .panel.active {
@@ -188,48 +238,136 @@ button:hover {
 
 label {
   display: block;
-  font-weight: bold;
-  margin-top: 14px;
-  margin-bottom: 6px;
+  margin-top: 12px;
+  margin-bottom: 5px;
+  font-weight: 700;
+  font-size: 13px;
 }
 
-input, select, textarea {
+input,
+select,
+textarea {
   width: 100%;
   padding: 11px;
-  border: 1px solid #d1d5db;
-  border-radius: 8px;
-  font-size: 15px;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+  background: white;
+  font: inherit;
 }
 
 textarea {
-  min-height: 100px;
+  min-height: 90px;
   resize: vertical;
 }
 
 .success {
-  display: none;
-  background: #dcfce7;
-  color: #166534;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 15px;
-  font-weight: bold;
+  margin-top: 12px;
+  padding: 12px;
+  background: #e8f7ee;
+  border-radius: 9px;
+  color: #17643d;
+  font-weight: 700;
+}
+
+.workflow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.step {
+  background: white;
+  border-radius: 13px;
+  padding: 16px 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(20,30,50,0.05);
+}
+
+.step-number {
+  font-size: 24px;
+  font-weight: 800;
+  color: #168b7c;
+}
+
+.step strong {
+  display: block;
+  margin-top: 5px;
+}
+
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.compare {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 5px 18px rgba(20,30,50,0.05);
+}
+
+.compare h3 {
+  margin-top: 0;
+}
+
+.compare ul {
+  padding-left: 20px;
+}
+
+.highlight {
+  border: 2px solid #168b7c;
 }
 
 .management {
-  border-left: 5px solid #111827;
+  background: #172033;
+  color: white;
+  border-radius: 20px;
+  padding: 25px;
+  margin-top: 25px;
+}
+
+.management p {
+  color: #cbd5e1;
+}
+
+.management .card {
+  color: #172033;
 }
 
 footer {
   text-align: center;
-  padding: 30px;
-  color: #6b7280;
+  color: #7b8798;
+  font-size: 13px;
+  padding: 25px 10px;
 }
 
-@media (max-width: 650px) {
-  .credential {
+@media (max-width: 750px) {
+  .stats,
+  .cards,
+  .before-after {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .workflow {
+    grid-template-columns: 1fr;
+  }
+
+  .header-inner {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 500px) {
+  .stats,
+  .cards,
+  .before-after {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding: 27px 20px;
   }
 }
 </style>
@@ -238,318 +376,378 @@ footer {
 <body>
 
 <header>
-  <div class="container">
-    <h1>CredentialFlow</h1>
-    <p>Workforce credential management — simplified.</p>
+  <div class="header-inner">
+    <div class="logo">Credential<span>Flow</span></div>
+    <div class="badge">Sponsor Demonstration Prototype</div>
   </div>
 </header>
 
-<main class="container">
+<main>
 
 <section class="hero">
-  <h2>One easy go-to for workforce credentials.</h2>
+  <h1>One easy go-to for <span>workforce credentials.</span></h1>
 
   <p>
-    Upload, verify, track and manage workforce credentials from one
-    organised workflow.
-  </p>
-
-  <p class="highlight">
-    Less chasing. Less administration. More time for people.
+    CredentialFlow brings credential uploading, verification, renewal tracking,
+    overdue explanations and management review into one organised workflow.
   </p>
 
   <p>
-    <strong>Development target:</strong>
-    reduce credential administration time by up to 50% through
-    streamlined workflows, reminders and centralised credential management.
+    <strong>Less chasing. Less administration. More time for people.</strong>
   </p>
+
+  <div class="target">
+    <strong>Development target</strong>
+    Reduce credential administration time by up to 50% through streamlined
+    workflows, reminders and centralised credential management.
+  </div>
 </section>
+
+<div class="section-title">
+  <h2>Credential status at a glance</h2>
+  <p>A simple view of what is verified, due, overdue or awaiting action.</p>
+</div>
 
 <section class="stats">
-
   <div class="stat">
-    <strong>8</strong>
-    Verified
+    <div class="stat-number">8</div>
+    <div class="stat-label">Verified</div>
   </div>
 
   <div class="stat">
-    <strong>2</strong>
-    Renewals Due
+    <div class="stat-number">2</div>
+    <div class="stat-label">Renewals Due</div>
   </div>
 
   <div class="stat">
-    <strong>1</strong>
-    Overdue
+    <div class="stat-number">1</div>
+    <div class="stat-label">Overdue</div>
   </div>
 
   <div class="stat">
-    <strong>1</strong>
-    Extension Request
+    <div class="stat-number">1</div>
+    <div class="stat-label">Extension Request</div>
+  </div>
+</section>
+
+<div class="section-title">
+  <h2>Worker credential dashboard</h2>
+  <p>Clear status information helps workers understand what needs attention.</p>
+</div>
+
+<section class="cards">
+
+  <div class="card">
+    <div class="card-top">
+      <h3>First Aid Certificate</h3>
+      <span>✓</span>
+    </div>
+    <span class="status verified">🟢 Verified</span>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Worker Screening Check</h3>
+      <span>✓</span>
+    </div>
+    <span class="status verified">🟢 Verified</span>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Training Certificate</h3>
+      <span>!</span>
+    </div>
+    <span class="status pending">🔵 Verification Pending</span>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Required Qualification</h3>
+      <span>!</span>
+    </div>
+    <span class="status due">🟡 Renewal Due</span>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Updated Certificate</h3>
+      <span>○</span>
+    </div>
+    <span class="status unavailable">⚪ Not Yet Available</span>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Overdue Document</h3>
+      <span>!</span>
+    </div>
+    <span class="status overdue">🔴 Overdue — Action Required</span>
+  </div>
+
+  <div class="card">
+    <div class="card-top">
+      <h3>Extension Request</h3>
+      <span>↗</span>
+    </div>
+    <span class="status extension">🟣 Management Review</span>
   </div>
 
 </section>
 
-<section class="section">
+<div class="actions">
+  <button onclick="showPanel('uploadPanel')">📤 Upload Credential</button>
+  <button onclick="showPanel('overduePanel')">📝 Explain Overdue Document</button>
+  <button onclick="showPanel('extensionPanel')">📨 Request Extension</button>
+</div>
 
-<h2>My Credentials</h2>
+<div id="uploadPanel" class="panel">
+  <h3>Upload Credential</h3>
 
-<div class="credential">
-  <div>
-    <h3>First Aid Certificate</h3>
-    <small>Expiry: 12 June 2027</small>
+  <label>Credential Type</label>
+  <select>
+    <option>First Aid Certificate</option>
+    <option>Worker Screening Check</option>
+    <option>Training Certificate</option>
+    <option>Qualification</option>
+    <option>Other</option>
+  </select>
+
+  <label>Document</label>
+  <input type="file">
+
+  <label>Expiry Date</label>
+  <input type="date">
+
+  <div class="actions">
+    <button onclick="submitDemo('uploadResult')">Submit Demo Upload</button>
   </div>
-  <span class="status verified">🟢 Verified</span>
+
+  <div id="uploadResult"></div>
 </div>
 
-<div class="credential">
-  <div>
-    <h3>Worker Screening Check</h3>
-    <small>Expiry: 4 February 2028</small>
+<div id="overduePanel" class="panel">
+  <h3>Explain Overdue Document</h3>
+
+  <label>Reason for delay</label>
+  <textarea placeholder="Briefly explain why the updated document is not yet available."></textarea>
+
+  <label>Expected Document Date</label>
+  <input type="date">
+
+  <div class="actions">
+    <button onclick="submitDemo('overdueResult')">Submit Explanation</button>
   </div>
-  <span class="status verified">🟢 Verified</span>
+
+  <div id="overdueResult"></div>
 </div>
 
-<div class="credential">
-  <div>
-    <h3>Training Certificate</h3>
-    <small>Document received and awaiting review</small>
+<div id="extensionPanel" class="panel">
+  <h3>Request Extension</h3>
+
+  <label>Reason for extension</label>
+  <textarea placeholder="Briefly explain why an extension is required."></textarea>
+
+  <label>Expected Document Date</label>
+  <input type="date">
+
+  <div class="actions">
+    <button onclick="submitDemo('extensionResult')">Submit Extension Request</button>
   </div>
-  <span class="status pending">🔵 Verification Pending</span>
+
+  <div id="extensionResult"></div>
 </div>
 
-<div class="credential">
-  <div>
-    <h3>Required Qualification</h3>
-    <small>Renewal approaching</small>
+<div class="section-title">
+  <h2>How CredentialFlow works</h2>
+  <p>One connected workflow from upload through management action.</p>
+</div>
+
+<section class="workflow">
+
+  <div class="step">
+    <div class="step-number">1</div>
+    <strong>Upload</strong>
+    Worker submits a credential.
   </div>
-  <span class="status due">🟡 Renewal Due</span>
-</div>
 
-<div class="credential">
-  <div>
-    <h3>Updated Certificate</h3>
-    <small>Renewal currently unavailable</small>
+  <div class="step">
+    <div class="step-number">2</div>
+    <strong>Verify</strong>
+    Verification can begin where an appropriate authorised source exists.
   </div>
-  <span class="status neutral">⚪ Not Yet Available</span>
-</div>
 
-<div class="credential">
-  <div>
-    <h3>Overdue Document</h3>
-    <small>Worker can provide an explanation</small>
+  <div class="step">
+    <div class="step-number">3</div>
+    <strong>Track</strong>
+    Status and renewal dates stay visible.
   </div>
-  <span class="status overdue">🔴 Overdue</span>
-</div>
 
-<div class="credential">
-  <div>
-    <h3>Extension Request</h3>
-    <small>Awaiting management decision</small>
+  <div class="step">
+    <div class="step-number">4</div>
+    <strong>Manage</strong>
+    Overdue explanations and extensions go to management.
   </div>
-  <span class="status extension">🟣 Management Review</span>
-</div>
 
-<button onclick="showPanel('upload')">
-  📤 Upload Credential
-</button>
-
-<button onclick="showPanel('overdue')">
-  📝 Explain Overdue Document
-</button>
-
-<button onclick="showPanel('extension')">
-  📨 Request Extension
-</button>
-
-<div id="upload" class="panel">
-
-<h3>Upload Credential</h3>
-
-<p>
-Upload an updated certificate, qualification or other required credential.
-</p>
-
-<label>Credential Type</label>
-
-<select>
-  <option>First Aid Certificate</option>
-  <option>Qualification</option>
-  <option>Training Certificate</option>
-  <option>Worker Screening</option>
-  <option>Other Credential</option>
-</select>
-
-<label>Document</label>
-
-<input type="file">
-
-<label>Expiry Date</label>
-
-<input type="date">
-
-<button onclick="submitDemo('uploadSuccess')">
-  Submit Credential
-</button>
-
-<div id="uploadSuccess" class="success">
-  ✅ Demo submission received. CredentialFlow would now begin the verification workflow.
-</div>
-
-</div>
-
-<div id="overdue" class="panel">
-
-<h3>Explain an Overdue Document</h3>
-
-<p>
-Let management know why an updated document is overdue and provide an
-expected completion date.
-</p>
-
-<label>Reason for delay</label>
-
-<textarea placeholder="Briefly explain the reason..."></textarea>
-
-<label>Expected document date</label>
-
-<input type="date">
-
-<button onclick="submitDemo('overdueSuccess')">
-  Submit Explanation
-</button>
-
-<div id="overdueSuccess" class="success">
-  ✅ Explanation submitted. Management can now review the information.
-</div>
-
-</div>
-
-<div id="extension" class="panel">
-
-<h3>Request an Extension</h3>
-
-<p>
-Request additional time for an overdue credential. Management can review
-the request and approve or decline it.
-</p>
-
-<label>Reason for extension</label>
-
-<textarea placeholder="Briefly explain why an extension is needed..."></textarea>
-
-<label>Expected document date</label>
-
-<input type="date">
-
-<button onclick="submitDemo('extensionSuccess')">
-  Submit Extension Request
-</button>
-
-<div id="extensionSuccess" class="success">
-  📨 Extension request submitted for management review.
-</div>
-
-</div>
+  <div class="step">
+    <div class="step-number">5</div>
+    <strong>Decide</strong>
+    Management can review and record an outcome.
+  </div>
 
 </section>
 
-<section class="section management">
-
-<h2>Management Overview</h2>
-
-<p>
-CredentialFlow brings outstanding credential actions into one place,
-reducing the need for management to repeatedly chase workers for documents.
-</p>
-
-<ul>
-  <li>🔵 Documents awaiting verification</li>
-  <li>🟡 Upcoming renewals</li>
-  <li>🔴 Overdue credentials</li>
-  <li>📝 Worker explanations</li>
-  <li>📅 Expected document dates</li>
-  <li>📨 Extension requests</li>
-  <li>✅ Management decisions</li>
-</ul>
-
-<button onclick="showPanel('management')">
-  🔍 Review Outstanding Items
-</button>
-
-<div id="management" class="panel">
-
-<h3>Management Review</h3>
-
-<p><strong>Example outstanding item:</strong></p>
-
-<p>
-Worker: Demo Worker<br>
-Credential: Updated Certificate<br>
-Status: Overdue<br>
-Expected document date: Provided by worker<br>
-Extension: Requested
-</p>
-
-<button onclick="managementDecision('approved')">
-  ✅ Approve Extension
-</button>
-
-<button class="secondary" onclick="managementDecision('declined')">
-  ❌ Decline Extension
-</button>
-
-<div id="managementResult" class="success"></div>
-
+<div class="section-title">
+  <h2>The problem → The opportunity</h2>
 </div>
+
+<section class="before-after">
+
+  <div class="compare">
+    <h3>Before CredentialFlow</h3>
+    <ul>
+      <li>Documents spread across different systems.</li>
+      <li>Managers manually chase workers.</li>
+      <li>Renewal dates can be difficult to track.</li>
+      <li>Overdue explanations may arrive through different channels.</li>
+      <li>Management spends time following up instead of focusing on people.</li>
+    </ul>
+  </div>
+
+  <div class="compare highlight">
+    <h3>With CredentialFlow</h3>
+    <ul>
+      <li>One organised credential workflow.</li>
+      <li>Clear visual status for every credential.</li>
+      <li>Upload and renewal information in one place.</li>
+      <li>Structured overdue and extension requests.</li>
+      <li>Management receives clearer actions and decisions.</li>
+    </ul>
+  </div>
 
 </section>
 
-</main>
+<section class="management">
+
+  <h2>👩‍💼 Management Overview</h2>
+
+  <p>
+    A management view designed to surface the items that need attention,
+    reducing unnecessary chasing and improving visibility.
+  </p>
+
+  <div class="cards">
+
+    <div class="card">
+      <h3>Documents Awaiting Verification</h3>
+      <p>3 credentials require verification review.</p>
+    </div>
+
+    <div class="card">
+      <h3>Upcoming Renewals</h3>
+      <p>2 credentials approaching renewal.</p>
+    </div>
+
+    <div class="card">
+      <h3>Overdue Credentials</h3>
+      <p>1 credential currently requires action.</p>
+    </div>
+
+    <div class="card">
+      <h3>Extension Requests</h3>
+      <p>1 request waiting for management decision.</p>
+    </div>
+
+  </div>
+
+  <div class="actions">
+    <button onclick="showPanel('managementPanel')">
+      👀 Review Outstanding Items
+    </button>
+
+    <button class="secondary" onclick="showPanel('managementPanel')">
+      📨 Review Extension Requests
+    </button>
+  </div>
+
+  <div id="managementPanel" class="panel">
+
+    <h3>Management Review — Demo</h3>
+
+    <p>
+      <strong>Demo Worker</strong><br>
+      Credential: Updated Certificate<br>
+      Status: Overdue<br>
+      Expected document date: Demo date<br>
+      Extension: Requested
+    </p>
+
+    <div class="actions">
+      <button onclick="managementDecision('approved')">
+        ✅ Approve Extension
+      </button>
+
+      <button class="danger" onclick="managementDecision('declined')">
+        ❌ Decline Extension
+      </button>
+    </div>
+
+    <div id="managementResult"></div>
+
+  </div>
+
+</section>
 
 <footer>
-
-<p>CredentialFlow — prototype demonstration</p>
-
-<p>
-Designed to reduce administrative chasing and simplify workforce credential management.
-</p>
-
+  CredentialFlow — Sponsor demonstration prototype.<br>
+  Demonstration only. No real worker data or credential verification is connected.
 </footer>
+
+</main>
 
 <script>
 
 function showPanel(id) {
+  const panels = document.querySelectorAll(".panel");
 
-  document.querySelectorAll('.panel').forEach(function(panel) {
-    panel.classList.remove('active');
+  panels.forEach(panel => {
+    panel.classList.remove("active");
   });
 
-  document.getElementById(id).classList.add('active');
+  document.getElementById(id).classList.add("active");
 
   document.getElementById(id).scrollIntoView({
-    behavior: 'smooth',
-    block: 'center'
+    behavior: "smooth",
+    block: "nearest"
   });
 }
 
-function submitDemo(id) {
+function submitDemo(resultId) {
 
-  document.getElementById(id).style.display = 'block';
+  const messages = {
+    uploadResult:
+      "✅ Demo submission received. CredentialFlow would now begin the verification workflow.",
+
+    overdueResult:
+      "✅ Explanation submitted. Management can now review the information.",
+
+    extensionResult:
+      "📨 Extension request submitted for management review."
+  };
+
+  document.getElementById(resultId).innerHTML =
+    '<div class="success">' + messages[resultId] + '</div>';
 }
 
 function managementDecision(decision) {
 
-  const result = document.getElementById('managementResult');
+  const message =
+    decision === "approved"
+      ? "✅ Demo decision recorded: Extension approved."
+      : "❌ Demo decision recorded: Extension declined.";
 
-  result.style.display = 'block';
-
-  if (decision === 'approved') {
-    result.innerHTML =
-      '✅ Demo decision recorded: Extension Approved.';
-  } else {
-    result.innerHTML =
-      '❌ Demo decision recorded: Extension Declined.';
-  }
+  document.getElementById("managementResult").innerHTML =
+    '<div class="success">' + message + '</div>';
 }
 
 </script>
