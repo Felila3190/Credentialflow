@@ -369,6 +369,106 @@ footer {
   .hero {
     padding: 27px 20px;
   }
+} /* ================================
+   VERIFICATION CARDS
+================================ */
+
+.verification-card {
+  background: #ffffff;
+  border: 1px solid #e1e5ea;
+  border-radius: 14px;
+  padding: 20px;
+  margin-top: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+.verification-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+}
+
+.verification-card-header strong {
+  font-size: 18px;
+}
+
+.status-badge {
+  padding: 7px 12px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.status-badge.pending {
+  background: #fff4cc;
+  color: #856404;
+}
+
+.status-badge.verified {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.action {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.verification-details {
+  background: #f7f9fb;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 18px;
+}
+
+.verification-details p {
+  margin: 7px 0;
+}
+
+.verification-step {
+  margin-top: 10px;
+}
+
+.verification-step strong {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.step {
+  padding: 10px 12px;
+  margin: 6px 0;
+  border-left: 4px solid #d9dee3;
+  background: #f8f9fa;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+.step.complete {
+  border-left-color: #28a745;
+}
+
+.step.active {
+  border-left-color: #f0ad00;
+  font-weight: 600;
+}
+
+.verification-action {
+  margin-top: 20px;
+}
+
+.verification-action button {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+#verificationResult {
+  margin-top: 15px;
+  font-weight: 600;
 }
 </style>
 </head>
