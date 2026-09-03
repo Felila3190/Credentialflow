@@ -519,7 +519,7 @@ footer {
 <select id="credentialType">
   <option value="">Select credential type</option>
 </select>
-  
+  <div id="credentialDetails"></div>
 
   <label>Document</label>
   <input type="file">
@@ -759,8 +759,10 @@ function managementDecision(decision) {
 function updateCredentialTypes() {
   const category = document.getElementById("credentialCategory").value;
   const credentialType = document.getElementById("credentialType");
+  const credentialDetails = document.getElementById("credentialDetails");
 
   credentialType.innerHTML = '<option value="">Select credential type</option>';
+  credentialDetails.innerHTML = "";
 
   const credentials = {
     health: [
@@ -803,8 +805,125 @@ function updateCredentialTypes() {
       credentialType.appendChild(option);
     });
   }
-}
 
+  credentialType.onchange = function() {
+    const selected = credentialType.value;
+
+    credentialDetails.innerHTML = "";
+
+    if (selected === "First Aid Certificate") {
+      credentialDetails.innerHTML = `
+        <label>Certificate Number</label>
+        <input type="text" placeholder="Enter certificate number">
+
+        <label>Issue Date</label>
+        <input type="date">
+
+        <label>Expiry Date</label>
+        <input type="date">
+      `;
+    }
+
+    if (selected === "CPR Certificate") {
+      credentialDetails.innerHTML = `
+        <label>Certificate Number</label>
+        <input type="text" placeholder="Enter certificate number">
+
+        <label>Issue Date</label>
+        <input type="date">
+
+        <label>Expiry Date</label>
+        <input type="date">
+      `;
+    }
+
+    if (selected === "Worker Screening Check") {
+      credentialDetails.innerHTML = `
+        <label>Screening Check Number</label>
+        <input type="text" placeholder="Enter screening number">
+
+        <label>Expiry Date</label>
+        <input type="date">
+      `;
+    }
+
+    if (selected === "WWCC") {
+      credentialDetails.innerHTML = `
+        <label>WWCC Number</label>
+        <input type="text" placeholder="Enter WWCC number">
+
+        <label>Expiry Date</label>
+        <input type="date">
+      `;
+    }
+
+    if (selected === "Driver Licence") {
+      credentialDetails.innerHTML = `
+        <label>Licence Number</label>
+        <input type="text" placeholder="Enter licence number">
+
+        <label>Licence Class</label>
+        <input type="text" placeholder="e.g. C">
+
+        <label>Expiry Date</label>
+        <input type="date">
+      `;
+    }
+
+    if (selected === "Vehicle Registration") {
+      credentialDetails.innerHTML = `
+        <label>Registration Number</label>
+        <input type="text" placeholder="Enter registration number">
+
+        <label>Expiry Date</label>
+        <input type="date">
+      `;
+    }
+
+    if (selected === "CTP Insurance" || selected === "Vehicle Insurance") {
+      credentialDetails.innerHTML = `
+        <label>Policy Number</label>
+        <input type="text" placeholder="Enter policy number">
+
+        <label>Expiry Date</label>
+        <input type="date">
+      `;
+    }
+
+    if (selected === "Vehicle Safety/Inspection") {
+      credentialDetails.innerHTML = `
+        <label>Inspection Number</label>
+        <input type="text" placeholder="Enter inspection number">
+
+        <label>Inspection Date</label>
+        <input type="date">
+
+        <label>Expiry Date</label>
+        <input type="date">
+      `;
+    }
+
+    if (selected === "Training Certificate" || selected === "Qualification") {
+      credentialDetails.innerHTML = `
+        <label>Course / Qualification Name</label>
+        <input type="text" placeholder="Enter course or qualification">
+
+        <label>Issue Date</label>
+        <input type="date">
+
+        <label>Expiry Date</label>
+        <input type="date">
+      `;
+    }
+
+    if (selected === "Resume/CV" || selected === "Other Credential") {
+      credentialDetails.innerHTML = `
+        <label>Document Name</label>
+        <input type="text" placeholder="Enter document name">
+      `;
+    }
+  };
+}
 
 </script>
 
