@@ -531,6 +531,42 @@ footer {
   </div>
 
   <div id="uploadResult"></div>
+</div> <!-- VERIFICATION CARDS -->
+<div id="verificationSection" class="panel">
+  <h3>Credential Verification</h3>
+  <div class="verification-card">
+    <div class="verification-card-header">
+      <strong>First Aid Certificate</strong>
+      <span class="status-badge pending">🟡 Verification in progress</span>
+    </div>
+    <div class="verification-details">
+      <p><strong>Worker:</strong> Demo Worker</p>
+      <p><strong>Credential:</strong> First Aid Certificate</p>
+      <p><strong>Expiry:</strong> Pending verification</p>
+      <p><strong>Issuer:</strong> Pending verification</p>
+    </div>
+    <div class="verification-step">
+      <strong>Verification workflow</strong>
+      <div class="step complete">
+        ✅ Document submitted
+      </div>
+      <div class="step active">
+        🔍 Credential verification
+      </div>
+      <div class="step">
+        ⏳ Expiry validation
+      </div>
+      <div class="step">
+        ⏳ Final compliance status
+      </div>
+    </div>
+    <div class="verification-action">
+      <button onclick="submitDemo('verificationResult')">
+        Run Demo Verification
+      </button>
+    </div>
+    <div id="verificationResult"></div>
+  </div>
 </div>
 
 <div id="overduePanel" class="panel">
