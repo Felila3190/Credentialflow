@@ -504,22 +504,20 @@ footer {
 <div id="uploadPanel" class="panel">
   <h3>Upload Credential</h3>
 
-  <label>Credential Type</label>
-  
-  <select>
-  <option>First Aid Certificate</option>
-  <option>CPR Certificate</option>
-  <option>WWCC (Working With Children Check)</option>
-  <option>Worker Screening Check</option>
-  <option>Training Certificate</option>
-  <option>Qualification</option>
-  <option>Driver Licence</option>
-  <option>Vehicle Registration</option>
-  <option>CTP Insurance</option>
-  <option>Vehicle Insurance</option>
-  <option>Vehicle Safety/Inspection</option>
-  <option>Resume / CV</option>
-  <option>Other</option>
+  <label>Credential Category</label>
+<select id="credentialCategory" onchange="updateCredentialTypes()">
+  <option value="">Select a category</option>
+  <option value="health">Health & Safety</option>
+  <option value="screening">Screening & Checks</option>
+  <option value="education">Education & Training</option>
+  <option value="vehicle">Driver & Vehicle Compliance</option>
+  <option value="worker">Worker Documents</option>
+  <option value="other">Other</option>
+</select>
+
+<label>Credential Type</label>
+<select id="credentialType">
+  <option value="">Select credential type</option>
 </select>
   
 
@@ -757,7 +755,56 @@ function managementDecision(decision) {
 
   document.getElementById("managementResult").innerHTML =
     '<div class="success">' + message + '</div>';
+} 
+function updateCredentialTypes() {
+  const category = document.getElementById("credentialCategory").value;
+  const credentialType = document.getElementById("credentialType");
+
+  credentialType.innerHTML = '<option value="">Select credential type</option>';
+
+  const credentials = {
+    health: [
+      "First Aid Certificate",
+      "CPR Certificate"
+    ],
+
+    screening: [
+      "WWCC",
+      "Worker Screening Check"
+    ],
+
+    education: [
+      "Training Certificate",
+      "Qualification"
+    ],
+
+    vehicle: [
+      "Driver Licence",
+      "Vehicle Registration",
+      "CTP Insurance",
+      "Vehicle Insurance",
+      "Vehicle Safety/Inspection"
+    ],
+
+    worker: [
+      "Resume/CV"
+    ],
+
+    other: [
+      "Other Credential"
+    ]
+  };
+
+  if (credentials[category]) {
+    credentials[category].forEach(function(credential) {
+      const option = document.createElement("option");
+      option.value = credential;
+      option.textContent = credential;
+      credentialType.appendChild(option);
+    });
+  }
 }
+
 
 </script>
 
