@@ -230,6 +230,9 @@ button:hover {
   border-radius: 14px;
   padding: 18px;
   margin-top: 15px;
+  box-sizing: border-box;
+  width: 100%;
+}
 }
 
 .panel.active {
@@ -871,16 +874,52 @@ function submitDemo(resultId) {
 
   const messages = {
     uploadResult:
-    "✅ Demo submission received. CredentialFlow verification is now in progress. Status: 🟡 Verification in progress.",
+      "✅ Demo submission received. CredentialFlow verification is now in progress. Status: 🟡 Verification in progress.",
+
     overdueResult:
       "✅ Explanation submitted. Management can now review the information.",
 
     extensionResult:
-      "📨 Extension request submitted for management review."
+      "📨 Extension request submitted for management review.",
+
+    verificationResult:
+      "✅ Demo verification completed. Credential verified successfully."
   };
 
   document.getElementById(resultId).innerHTML =
     '<div class="success">' + messages[resultId] + '</div>';
+
+  // Update the Verification Card after demo verification
+  if (resultId === "verificationResult") {
+
+    const statusBadge =
+      document.querySelector("#verificationSection .status-badge");
+
+    if (statusBadge) {
+      statusBadge.classList.remove("pending");
+      statusBadge.classList.add("verified");
+      statusBadge.innerHTML = "🟢 Verified";
+    }
+
+    const steps =
+      document.querySelectorAll("#verificationSection .step");
+
+    if (steps.length >= 4) {
+      steps[0].innerHTML = "✅ Document submitted";
+      steps[0].classList.add("complete");
+
+      steps[1].innerHTML = "✅ Credential verified";
+      steps[1].classList.remove("active");
+      steps[1].classList.add("complete");
+
+      steps[2].innerHTML = "✅ Expiry validated";
+      steps[2].classList.add("complete");
+
+      steps[3].innerHTML = "✅ Compliance status confirmed";
+      steps[3].classList.add("complete");
+    }
+  }
+}div>';
 }
 
 function managementDecision(decision) {
