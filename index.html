@@ -1115,6 +1115,52 @@ function showPanel(panelId) {
   }
 }
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
 
+  const uploadButton = document.querySelector(
+    "button[onclick=\"showPanel('uploadPanel')\"]"
+  );
+
+  const overdueButton = document.querySelector(
+    "button[onclick=\"showPanel('overduePanel')\"]"
+  );
+
+  const extensionButton = document.querySelector(
+    "button[onclick=\"showPanel('extensionPanel')\"]"
+  );
+
+  function openPanel(panelId) {
+    document.querySelectorAll(".panel").forEach(function(panel) {
+      panel.style.display = "none";
+    });
+
+    const panel = document.getElementById(panelId);
+
+    if (panel) {
+      panel.style.display = "block";
+    }
+  }
+
+  if (uploadButton) {
+    uploadButton.onclick = function () {
+      openPanel("uploadPanel");
+    };
+  }
+
+  if (overdueButton) {
+    overdueButton.onclick = function () {
+      openPanel("overduePanel");
+    };
+  }
+
+  if (extensionButton) {
+    extensionButton.onclick = function () {
+      openPanel("extensionPanel");
+    };
+  }
+
+});
+</script>
 </body>
 </html>
